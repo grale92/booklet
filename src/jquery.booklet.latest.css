@@ -1,108 +1,457 @@
 /*
+ 
  * jQuery Booklet Plugin
+ 
  * Copyright (c) 2010 - 2014 William Grauvogel (http://builtbywill.com/)
+
  *
+
  * Licensed under the MIT license (http://www.opensource.org/licenses/mit-license.php)
+
  *
+
  * Version : 1.4.4
  *
  * Originally based on the work of:
+
  *	1) Charles Mangin (http://clickheredammit.com/pageflip/)
+
  */
-	.booklet         {width:800px; height:600px; position:relative; margin:0 auto 10px; overflow:visible !important;}
+
+	.booklet         {width:1200px; height:750px; position:relative; margin:0 auto 10px; overflow:visible !important;}
+
 	.booklet .b-page {left:0; top:0; position:absolute; overflow:hidden; padding:0; outline:1px solid rgba(0,0,0,0);}
+
+
 	
 	.booklet .b-pN  {}
-	.booklet .b-p0  {}
+
+		.booklet .b-p0  {}
+	
 	.booklet .b-p1  {}
-	.booklet .b-p2  {}    
+
+		.booklet .b-p2  {}
+	    
 	.booklet .b-p3  {}
-	.booklet .b-p4  {}
+
+		.booklet .b-p4  {}
+
+
 	   
    	/* Page Wrappers */
-	.booklet .b-wrap       {top:0; position:absolute;}
-	.booklet .b-wrap-left  {background:#fff;}
-	.booklet .b-wrap-right {background:#efefef;}
+
+		.booklet .b-wrap       {top:0; position:absolute;}
+
+		.booklet .b-wrap-left  {background: #bdf3fd;
+background: -moz-linear-gradient(left, #bdf3fd 0%, #6ba8e5 0%, #f4cccc 0%, #fde9eb 3%, #fde9eb 97%, #f4cccc 100%);
+background: -webkit-gradient(linear, left top, right top, color-stop(0%,#bdf3fd), color-stop(0%,#6ba8e5), color-stop(0%,#f4cccc), color-stop(3%,#fde9eb), color-stop(97%,#fde9eb), color-stop(100%,#f4cccc));
+background: -webkit-linear-gradient(left, #bdf3fd 0%,#6ba8e5 0%,#f4cccc 0%,#fde9eb 3%,#fde9eb 97%,#f4cccc 100%);
+background: -o-linear-gradient(left, #bdf3fd 0%,#6ba8e5 0%,#f4cccc 0%,#fde9eb 3%,#fde9eb 97%,#f4cccc 100%);
+background: -ms-linear-gradient(left, #bdf3fd 0%,#6ba8e5 0%,#f4cccc 0%,#fde9eb 3%,#fde9eb 97%,#f4cccc 100%);
+background: linear-gradient(to right, #bdf3fd 0%,#6ba8e5 0%,#f4cccc 0%,#fde9eb 3%,#fde9eb 97%,#f4cccc 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bdf3fd', endColorstr='#f4cccc',GradientType=1 );}
+
+		.booklet .b-wrap-right {background: #bdf3fd;
+background: -moz-linear-gradient(left, #bdf3fd 0%, #6ba8e5 0%, #f4cccc 0%, #fde9eb 3%, #fde9eb 97%, #f4cccc 100%);
+background: -webkit-gradient(linear, left top, right top, color-stop(0%,#bdf3fd), color-stop(0%,#6ba8e5), color-stop(0%,#f4cccc), color-stop(3%,#fde9eb), color-stop(97%,#fde9eb), color-stop(100%,#f4cccc));
+background: -webkit-linear-gradient(left, #bdf3fd 0%,#6ba8e5 0%,#f4cccc 0%,#fde9eb 3%,#fde9eb 97%,#f4cccc 100%);
+background: -o-linear-gradient(left, #bdf3fd 0%,#6ba8e5 0%,#f4cccc 0%,#fde9eb 3%,#fde9eb 97%,#f4cccc 100%);
+background: -ms-linear-gradient(left, #bdf3fd 0%,#6ba8e5 0%,#f4cccc 0%,#fde9eb 3%,#fde9eb 97%,#f4cccc 100%);
+background: linear-gradient(to right, #bdf3fd 0%,#6ba8e5 0%,#f4cccc 0%,#fde9eb 3%,#fde9eb 97%,#f4cccc 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bdf3fd', endColorstr='#f4cccc',GradientType=1 );}
+
+		.booklet .b-pN .b-wrap,
+
+		.booklet .b-p1 .b-wrap,
+
+		.booklet .b-p2 .b-wrap,
+
+		.booklet .b-p3 .b-wrap,
 	
-	.booklet .b-pN .b-wrap,
-	.booklet .b-p1 .b-wrap,
-	.booklet .b-p2 .b-wrap,
-	.booklet .b-p3 .b-wrap,
 	.booklet .b-p4 .b-wrap  {left:0;}
+	
 	.booklet .b-p0 .b-wrap  {right:0;}
+
+
 	
    	/* Custom Page Types */
-	.booklet .b-page-blank  {padding:0; width:100%; height:100%;}
-	.booklet .b-page-cover  {padding:0; width:100%; height:100%; background:#925C0E;}
+		.booklet .b-page-blank  {padding:0; width:100%; height:100%;}
+
+		.booklet .b-page-cover  {padding:0; width:100%; height:100%; background:#925C0E;}
+	
 	.booklet .b-page-cover h3  {color:#fff; text-shadow:0 1px 3px #222;}
    
-   	/* Page Numbers */
-	.booklet .b-counter {bottom:10px; position:absolute; display:block; width:25px; height:20px; background:#ccc; color:#444; text-align:center; font-family:Georgia, "Times New Roman", Times, serif; font-size:10px; padding:5px 0 0;}
-	.booklet .b-wrap-left  .b-counter  {left:10px;}
+   		
+		/* Page Numbers */
+
+		.booklet .b-counter {bottom:10px; position:absolute; display:block; width:25px; height:20px; background:#ccc; color:#444; text-align:center; font-family:Georgia, "Times New Roman", Times, serif; font-size:10px; padding:5px 0 0;}
+		
+		.booklet .b-wrap-left  .b-counter  {left:10px;}
+	
 	.booklet .b-wrap-right .b-counter {right:10px;}
-   
+
+
+	   
    	/* Page Shadows */
-	.booklet .b-shadow-f  {right:0; top:0; position:absolute; opacity:0; background-image:url("images/shadow-top-forward.png"); background-repeat:repeat-y; background-position:100% 0;}
-	.booklet .b-shadow-b  {left:0;  top:0; position:absolute; opacity:0; background-image:url("images/shadow-top-back.png");    background-repeat:repeat-y; background-position:0 0;}
+
+		.booklet .b-shadow-f  {right:0; top:0; position:absolute; opacity:0; background-image:url("images/shadow-top-forward.png"); background-repeat:repeat-y; background-position:100% 0;}
+
+		.booklet .b-shadow-b  {left:0;  top:0; position:absolute; opacity:0; background-image:url("images/shadow-top-back.png");    background-repeat:repeat-y; background-position:0 0;}
+
+
 	
 	.booklet .b-p0 {background-image:url("images/shadow.png"); background-repeat:repeat-y; background-position:100% 10px;}
-	.booklet .b-p3 {background-image:url("images/shadow.png"); background-repeat:repeat-y; background-position:0 10px;}
+
+		.booklet .b-p3 {background-image:url("images/shadow.png"); background-repeat:repeat-y; background-position:0 10px;}
+
+
 	
    	/* Overlay Controls */
-	.booklet .b-grab     {cursor: url("images/openhand.cur"), default;}
-	.booklet .b-grabbing {cursor: url("images/closedhand.cur"), default;}
+
+		.booklet .b-grab     {cursor: url("images/openhand.cur"), default;}
+				.booklet .b-grabbing {cursor: url("images/closedhand.cur"), default;}
 	
-   	/* Overlay Controls */
-	.booklet .b-overlay      {top:0; position:absolute; height:100%; width:50%;}
+   	
+		/* Overlay Controls */
+
+		.booklet .b-overlay      {top:0; position:absolute; height:100%; width:50%;}
 	.booklet .b-overlay-prev {left:0;}
-	.booklet .b-overlay-next {right:0;}
+
+		.booklet .b-overlay-next {right:0;}
+
+
 	
    	/* Tab Controls */
+	
 	.booklet .b-tab        {background:#000; height:40px; width:100%; padding:10px 0 0; text-align:center; color:#ccc; position:absolute; font-size:11px;}
-	.booklet .b-tab-prev   {left:0;}
-	.booklet .b-tab-next   {right:0;}
-	.booklet .b-tab:hover  {background:#aaa; color:#000;}	
+			.booklet .b-tab-prev   {left:0;}
+
+		.booklet .b-tab-next   {right:0;}
+
+		.booklet .b-tab:hover  {background:#aaa; color:#000;}
+
+
 	
    	/* Arrow Controls */
+	
 	.booklet .b-arrow          {display:block; position:absolute; text-indent:-9999px; top:0; height:100%; width:74px;}
+	
 	.booklet .b-arrow div      {display:none; text-indent:-9999px; height:170px; width:74px; position:absolute; left:0; top:25%;}
+	
 	.booklet .b-arrow-next     {right:-80px;}
+	
 	.booklet .b-arrow-prev     {left:-80px;}
-	.booklet .b-arrow-next div {background:url("images/arrow-next.png") no-repeat left top;}
-	.booklet .b-arrow-prev div {background:url("images/arrow-prev.png") no-repeat left top;}
+
+		.booklet .b-arrow-next div {background:url("images/arrow-next.png") no-repeat left top;}
+
+		.booklet .b-arrow-prev div {background:url("images/arrow-prev.png") no-repeat left top;}
+
+
 		
 /* @z-index fix (needed for older IE browsers)
 ----------------------------------------*/
 
-    body              {z-index:0;}
+ 
+
+		   body              {z-index:0;}
+		
     .b-menu           {z-index:100;}
-    .b-selector       {z-index:100;}
-    .booklet          {z-index:10;}
+
+		    .b-selector       {z-index:100;}
+
+		    .booklet          {z-index:10;}
+		
     .b-pN             {z-index:10;}
+		
     .b-p0             {z-index:30;}
-    .b-p1             {z-index:20;}
-    .b-p2             {z-index:20;}
+
+		    .b-p1             {z-index:20;}
+
+		    .b-p2             {z-index:20;}
+		
     .b-p3             {z-index:30;}
+		
     .b-p4             {z-index:10;}
-    .b-prev           {z-index:40;}
-    .b-next           {z-index:40;}
-    .b-counter        {z-index:40;}
-	
+
+		    .b-prev           {z-index:40;}
+
+		    .b-next           {z-index:40;}
+
+		    .b-counter        {z-index:40;}
+
+
+
 /* @Menu Items
 ----------------------------------------*/
+
 	.b-menu {height:40px; padding:0 0 10px;}
+
+
 	
-	.b-selector             {height:40px; position:relative; float:right; border:none; color:#cecece; cursor:pointer; font:normal 12px "Myriad Pro", Myriad, "DejaVu Sans Condensed","Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;}
+	.b-selector             {height:40px; position:absolute; margin-top: -40px; right: 0; float:right; border:none; color:#cecece; cursor:pointer; font:normal 1em courier, "Myriad Pro", Myriad, "DejaVu Sans Condensed","Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;}
+	
 	.b-selector .b-current  {padding:8px 15px 12px; line-height:20px; min-width:18px; height:20px; display:block; background:#000; text-align:center;}
+	
 	.b-selector-page        {width:auto; margin-left:15px;}
+	
 	.b-selector-chapter     {width:auto;}
+
+
 	
 	.b-selector:hover            {color:#fff; background-position:left 0;}
-	.b-selector:hover .b-current {background-position:right 0;}
+			.b-selector:hover .b-current {background-position:right 0;}
+	
 	.b-selector ul               {overflow:hidden; margin:0; list-style:none !important; position:absolute; top:40px; right:0; padding:0 0 10px; background:#000; width:240px;}
+	
 	.b-selector li               {border:none;}
+	
 	.b-selector a                {color:#cecece; height:14px; text-decoration:none; display:block; padding:5px 10px;}
-	.b-selector a .b-text        {float:left; clear:none;}
+
+		.b-selector a .b-text        {float:left; clear:none;}
+	
 	.b-selector a .b-num         {float:right; clear:none;}
-	.b-selector a:hover          {color:#fff;}
+
+		.b-selector a:hover          {color:#fff;}
+
+		.b-selector a:link 	     {color:#cecece}	
+
+body{	
+	font-size: 10pt;
+	line-height: 10px;
+}
+
+a:link    {text-decoration: none; color: Blue;}
+a:visited {text-decoration: none; color: Blue; font-weight : bold;}
+a:hover   {color: #0000FF; text-shadow: 1px 1px 1px #CCCCCC; transition: all 1s; -moz-transition: all 1s; -webkit-transition: all 1s; -o-transition: all 1s;}
 		
+/* TESTO */	
+#TZ{
+ 	font-family: Inconsolata, courier, Verdana, "Times New Roman", Georgia, serif;
+	font-size: 11pt;
+	word-spacing: 0.1em;
+	line-height: 1.5em;
+}
+
+ #TZ p{
+ 	font-size: 1em;
+ 	font-weight: 500;
+ 	font-style: normal;
+ 	text-align: justify;
+ }
+ 
+ #TZ  p.titolo{
+ 	font-size: 1.385em;
+ 	font-weight: 600;
+ 	font-style: bold;
+ 	text-align: center;
+ }
+ 
+ #TZ  p.sottotitolo{
+ 	font-size: 1.231em;
+ 	font-weight: 600;
+ 	font-style: bold;
+ 	text-align: center;
+ }
+ 
+ #TZ .domanda{
+	 font-size: 1em;
+	 font-weight: normal;
+	 color: rgba(76,120,240,1.00);
+ }
+ 
+ #TZ .risposta{
+	 font-size: 1em;
+	 font-weight: normal;
+	 color: rgba(0,0,0,1.00);
+ }
+
+/* IMMAGINI */ 
+ #TZ img{
+ 	display: block;
+	margin-left: auto;
+ 	margin-right: auto;
+ 	max-width: 570px;
+	max-height: 600px;
+	box-shadow: none;
+ }
+ 
+ #TZ img.crediti {
+    display: block;
+    margin: 0 auto;
+    box-shadow: none;
+    max-width: none; /* Rimuove il limite di larghezza */
+    width: auto;     /* Lascia la larghezza originale dell'immagine */
+}
+ 
+ #TZ img.intestazione{
+ 	display: block;
+	margin-left: auto;
+ 	margin-right: auto;
+ 	max-width: 600px;
+	box-shadow: none;
+ }
+
+ #TZ img.copertina{
+	max-width: 600px;
+	max-height: 750px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin-left: auto;
+ 	margin-right: auto;
+	box-shadow: none;
+}
+
+/* ALBO D'ORO */
+ #TZ img.albo{
+	box-shadow: none;
+	max-width: 550px;
+	max-height: 700px;
+}
+ 
+ #TZ img.preview{
+	box-shadow: none;
+	width: 170px;
+	height: 170px;
+}
+
+ #TZ tr.titolo{
+	font-size: 1.385em;
+ 	font-weight: 600;
+ 	font-style: bold;
+ 	text-align: center;
+} 
+
+ #TZ tr.sottotitolo{
+	font-size: 1.231em;
+ 	font-weight: 600;
+ 	font-style: bold;
+ 	text-align: center;
+}
+
+ #TZ iframe{
+ 	display: block;
+	margin-left: auto;
+ 	margin-right: auto;
+ 	max-width: 560px;
+ }
+
+/* CSS Document */
+
+/*container*/
+#drop-menu {
+	margin: 0 auto;
+	padding: 0;
+	width: 960px;
+}
+
+/*menu*/
+
+ul#menu {
+	margin:0px 0 0;
+	padding: 0;
+	list-style: none;
+	float:left;
+	width: 960px;
+	background-color: #111;
+	font-size:80%
+}
+
+ul#menu li {
+	margin:0;
+	padding:0;
+	float:left;
+	display: block;
+	border-right: 1px solid #222;
+	position: relative;
+}
+
+ul#menu li a {
+	float: left;
+	padding:12px 30px;
+	color: #fff;
+	text-transform: uppercase;
+	text-decoration:none;
+	-webkit-transition: all 0.6s ease;
+	-moz-transition: all 0.6s ease;
+	-ms-transition: all 0.6s ease;
+	-o-transition: all 0.6s ease;
+	transition: all 0.6s ease;
+}
+
+ul#menu li a:hover {
+	background: #666;
+	color:#fff
+}
+
+ul#menu ul {
+	margin:2px 0 0;
+	padding:0;
+	display:inline-block;
+	list-style: none;
+	opacity: 0;
+	visibility: hidden;
+	position: absolute;
+	top: 38px;
+	left: 0;
+	z-index:9999;
+	background: #444;
+	-webkit-transition: all 0.6s ease;
+	-moz-transition: all 0.6s ease;
+	-ms-transition: all 0.6s ease;
+	-o-transition: all 0.6s ease;
+	transition: all 0.6s ease;
+}
+
+ul#menu li:hover > ul {
+	opacity: 1;
+	visibility: visible;
+}
+
+ul#menu ul li {
+	float: none;
+	display: block;
+	border: 0;
+}
+
+ul#menu ul a {
+	padding:10px;
+	width: 130px;
+	display: block;
+	white-space: nowrap;
+	float: none;
+	text-transform: none;
+}
+
+ul#menu ul a:hover {
+	background-color: #0186ba;
+	color:#fff
+}
+
+ul#menu ul ul {
+	top: 0;
+	left: 150px;
+	margin: 0;
+}
+
+/*SCROLL BAR*/
+::-webkit-scrollbar {
+width:8px;
+height:8px;
+}
+::-webkit-scrollbar-track {
+background:#C2FF91;
+-webkit-box-shadow:inset 1px 1px 2px #E0E0E0;
+border:1px solid #D8D8D8;
+}
+::-webkit-scrollbar-thumb {
+background:#fff;
+-webkit-box-shadow:inset 1px 1px 2px rgba(155,155,155,0.4);
+}
+::-webkit-scrollbar-thumb:hover {
+-webkit-box-shadow:inset 1px 1px 10px rgba(0,0,0,0.3);
+}
+::-webkit-scrollbar-thumb:active {
+background:#888;
+-webkit-box-shadow:inset 1px 1px 2px rgba(0,0,0,0.3);
+}	
