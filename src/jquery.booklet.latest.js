@@ -2072,71 +2072,110 @@
         }
     }
 
+
+
     // define default options
+
     $.fn.booklet.defaults = {
+
         name: null,                            // name of the booklet to display in the document title bar
-        width: 600,                             // container width
-        height: 400,                             // container height
+        	width: 1200,                            // container width
+
+        height: 750,                             // container height
+
         speed: 1000,                            // speed of the transition between pages
+
         direction: 'LTR',                           // direction of the overall content organization, default LTR, left to right, can be RTL for languages which read right to left
+
         startingPage: 0,                               // index of the first page to be displayed
-        easing: 'easeInOutQuad',                 // easing method for complete transition
+        		easing: 'easeInOutQuad',                 // easing method for complete transition
+
         easeIn: 'easeInQuad',                    // easing method for first half of transition
-        easeOut: 'easeOutQuad',                   // easing method for second half of transition
+        	easeOut: 'easeOutQuad',                   // easing method for second half of transition
 
-        closed: false,                           // start with the book "closed", will add empty pages to beginning and end of book
+        		closed: true,                           // start with the book "closed", will add empty pages to beginning and end of book
+
         closedFrontTitle: 'Beginning',                     // used with "closed", "menu" and "pageSelector", determines title of blank starting page
-        closedFrontChapter: 'Beginning of Book',             // used with "closed", "menu" and "chapterSelector", determines chapter name of blank starting page
-        closedBackTitle: 'End',                           // used with "closed", "menu" and "pageSelector", determines chapter name of blank ending page
-        closedBackChapter: 'End of Book',                   // used with "closed", "menu" and "chapterSelector", determines chapter name of blank ending page
-        covers: false,                           // used with "closed", makes first and last pages into covers, without page numbers (if enabled)
-        autoCenter: false,                           // used with "closed", makes book position in center of container when closed
 
-        pagePadding: 10,                              // padding for each page wrapper
-        pageNumbers: true,                            // display page numbers on each page
-        pageBorder: 0,                               // size of the border around each page
+        closedFrontChapter: 'Copertina',             // used with "closed", "menu" and "chapterSelector", determines chapter name of blank starting page
+
+        closedBackTitle: 'End',                           // used with "closed", "menu" and "pageSelector", determines chapter name of blank ending page
+
+        closedBackChapter: 'Fine',                   // used with "closed", "menu" and "chapterSelector", determines chapter name of blank ending page
+
+        covers: false,                           // used with "closed", makes first and last pages into covers, without page numbers (if enabled)
+
+        autoCenter: true,                           // used with "closed", makes book position in center of container when closed
+
+
+        pagePadding: 16,                              // padding for each page wrapper
+
+        pageNumbers: false,                            // display page numbers on each page
+        		pageBorder: 0,                               // size of the border around each page
+
 
         manual: true,                            // enables manual page turning, requires jQuery UI to function
+
         hovers: true,                            // enables preview page-turn hover animation, shows a small preview of previous or next page on hover
+
         hoverWidth: 50,                              // default width for page-turn hover preview
-        hoverSpeed: 500,                             // default speed for page-turn hover preview
-        hoverThreshold: 0.25,                            // default percentage used for manual page dragging, sets the percentage amount a drag must be before moving next or prev
+        		hoverSpeed: 500,                             // default speed for page-turn hover preview
+        		hoverThreshold: 0.25,                            // default percentage used for manual page dragging, sets the percentage amount a drag must be before moving next or prev
+
         hoverClick: true,                            // enables hovered arreas to be clicked when using manual page turning
+
         overlays: false,                           // enables navigation using a page sized overlay, when enabled links inside the content will not be clickable
+
         tabs: false,                           // adds tabs along the top of the pages
+
         tabWidth: 60,                              // set the width of the tabs
+
         tabHeight: 20,                              // set the height of the tabs
+
         nextControlText: 'Next',                          // inline text for all 'next' controls
-        previousControlText: 'Previous',                      // inline text for all 'previous' controls
-        nextControlTitle: 'Next Page',                     // text for title attributes of all 'next' controls
+        	previousControlText: 'Previous',                      // inline text for all 'previous' controls
+       	nextControlTitle: 'Next Page',                     // text for title attributes of all 'next' controls
         previousControlTitle: 'Previous Page',                 // text for title attributes of all 'previous' controls
-        arrows: false,                           // adds arrow overlays over the book edges
-        arrowsHide: false,                           // auto hides arrows when controls are not hovered
-        cursor: 'pointer',                       // cursor css setting for side bar areas
+
+        arrows: true,                           // adds arrow overlays over the book edges
+        		arrowsHide: false,                           // auto hides arrows when controls are not hovered
+        	cursor: 'pointer',                       // cursor css setting for side bar areas
+
 
         hash: false,                           // enables navigation using a hash string, ex: #/page/1 for page 1, will affect all booklets with 'hash' enabled
+
         hashTitleText: " - Page ",                      // text which forms the hash page title, ex: (Name)" - Page "(1)
+
         keyboard: true,                            // enables navigation with arrow keys (left: previous, right: next)
+
         next: null,                            // selector for element to use as click trigger for next page
+
         prev: null,                            // selector for element to use as click trigger for previous page
+
         auto: false,                           // enables automatic navigation, requires "delay"
-        delay: 5000,                            // amount of time between automatic page flipping
-        pause: null,                            // selector for element to use as click trigger for pausing auto page flipping
+        		delay: 5000,                            // amount of time between automatic page flipping
+        		pause: null,                            // selector for element to use as click trigger for pausing auto page flipping
+
         play: null,                            // selector for element to use as click trigger for restarting auto page flipping
 
-        menu: null,                            // selector for element to use as the menu area, required for 'pageSelector'
-        pageSelector: false,                           // enables navigation with a drop-down menu of pages, requires 'menu'
-        chapterSelector: false,                           // enables navigation with a drop-down menu of chapters, determined by the "rel" attribute, requires 'menu'
 
+        menu: null,                            // selector for element to use as the menu area, required for 'pageSelector'
+
+        pageSelector: false,                           // enables navigation with a drop-down menu of pages, requires 'menu'
+
+        chapterSelector: true,                           // enables navigation with a drop-down menu of chapters, determined by the "rel" attribute, requires 'menu'
         shadows: true,                            // display shadows on page animations
-        shadowTopFwdWidth: 166,                             // shadow width for top forward animation
-        shadowTopBackWidth: 166,                             // shadow width for top back animation
-        shadowBtmWidth: 50,                              // shadow width for bottom shadow
+        	shadowTopFwdWidth: 166,                             // shadow width for top forward animation
+        	shadowTopBackWidth: 166,                             // shadow width for top back animation
+        	shadowBtmWidth: 50,                              // shadow width for bottom shadow
+
 
         create: null,                            // called when booklet has been created
+
         start: null,                            // called when booklet starts to change pages
-        change: null,                            // called when booklet has finished changing pages
-        add: null,                            // called when booklet has added a page
+        		change: null,                            // called when booklet has finished changing pages
+        	add: null,                            // called when booklet has added a page
+
         remove: null                             // called when booklet has removed a page
     }
 
