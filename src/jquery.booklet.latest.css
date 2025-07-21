@@ -42,23 +42,29 @@
 
 		.booklet .b-wrap       {top:0; position:absolute;}
 
-		.booklet .b-wrap-left  {background: #bdf3fd;
-background: -moz-linear-gradient(left, #bdf3fd 0%, #6ba8e5 0%, #f4cccc 0%, #fde9eb 3%, #fde9eb 97%, #f4cccc 100%);
-background: -webkit-gradient(linear, left top, right top, color-stop(0%,#bdf3fd), color-stop(0%,#6ba8e5), color-stop(0%,#f4cccc), color-stop(3%,#fde9eb), color-stop(97%,#fde9eb), color-stop(100%,#f4cccc));
-background: -webkit-linear-gradient(left, #bdf3fd 0%,#6ba8e5 0%,#f4cccc 0%,#fde9eb 3%,#fde9eb 97%,#f4cccc 100%);
-background: -o-linear-gradient(left, #bdf3fd 0%,#6ba8e5 0%,#f4cccc 0%,#fde9eb 3%,#fde9eb 97%,#f4cccc 100%);
-background: -ms-linear-gradient(left, #bdf3fd 0%,#6ba8e5 0%,#f4cccc 0%,#fde9eb 3%,#fde9eb 97%,#f4cccc 100%);
-background: linear-gradient(to right, #bdf3fd 0%,#6ba8e5 0%,#f4cccc 0%,#fde9eb 3%,#fde9eb 97%,#f4cccc 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bdf3fd', endColorstr='#f4cccc',GradientType=1 );}
+		.booklet .b-wrap-left  {
+			background: #bdf3fd;
+			background: linear-gradient(to right,
+				#bdf3fd 0%,
+				#6ba8e5 0%,
+				#f4cccc 0.1%,
+				#fde9eb 3%,
+				#fde9eb 97%,
+				#f4cccc 100%
+			);
+		}
 
-		.booklet .b-wrap-right {background: #bdf3fd;
-background: -moz-linear-gradient(left, #bdf3fd 0%, #6ba8e5 0%, #f4cccc 0%, #fde9eb 3%, #fde9eb 97%, #f4cccc 100%);
-background: -webkit-gradient(linear, left top, right top, color-stop(0%,#bdf3fd), color-stop(0%,#6ba8e5), color-stop(0%,#f4cccc), color-stop(3%,#fde9eb), color-stop(97%,#fde9eb), color-stop(100%,#f4cccc));
-background: -webkit-linear-gradient(left, #bdf3fd 0%,#6ba8e5 0%,#f4cccc 0%,#fde9eb 3%,#fde9eb 97%,#f4cccc 100%);
-background: -o-linear-gradient(left, #bdf3fd 0%,#6ba8e5 0%,#f4cccc 0%,#fde9eb 3%,#fde9eb 97%,#f4cccc 100%);
-background: -ms-linear-gradient(left, #bdf3fd 0%,#6ba8e5 0%,#f4cccc 0%,#fde9eb 3%,#fde9eb 97%,#f4cccc 100%);
-background: linear-gradient(to right, #bdf3fd 0%,#6ba8e5 0%,#f4cccc 0%,#fde9eb 3%,#fde9eb 97%,#f4cccc 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bdf3fd', endColorstr='#f4cccc',GradientType=1 );}
+		.booklet .b-wrap-right {
+			background: #bdf3fd;
+			background: linear-gradient(to right,
+				#bdf3fd 0%,
+				#6ba8e5 0%,
+				#f4cccc 0.1%,
+				#fde9eb 3%,
+				#fde9eb 97%,
+				#f4cccc 100%
+			);
+	}
 
 		.booklet .b-pN .b-wrap,
 
@@ -455,3 +461,12 @@ background:#fff;
 background:#888;
 -webkit-box-shadow:inset 1px 1px 2px rgba(0,0,0,0.3);
 }	
+
+/*CONTAINER*/
+
+.TZ-container {
+  position: relative;
+  width: 1360px;
+  margin: 0 auto;
+  overflow: visible;
+}
