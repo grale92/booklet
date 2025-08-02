@@ -273,8 +273,6 @@ a:hover   {color: #0000FF; text-shadow: 1px 1px 1px #CCCCCC; transition: all 1s;
     display: block;
     margin: 0 auto;
     box-shadow: none;
-    max-width: none; /* Rimuove il limite di larghezza */
-    width: auto;     /* Lascia la larghezza originale dell'immagine */
 }
  
  #TZ img.intestazione{
